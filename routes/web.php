@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
+    \Butschster\Head\Facades\Meta::setTitle('Blog')
+        ->setDescription('Blog');
+
     $posts = \App\Models\Post::with('category', 'tags')
         ->take(10)
         ->latest()

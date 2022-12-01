@@ -3,23 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Butschster\Head\Contracts\MetaTags\MetaInterface;
-use Illuminate\Http\Request;
+use Butschster\Head\Facades\Meta;
 use Illuminate\View\View;
 
 class PostController extends Controller
 {
-    protected $meta;
-
-    public function __construct(MetaInterface $meta)
-    {
-        $this->meta = $meta;
-    }
-
     public function index():View
     {
-        $this->meta
-            ->setTitle('Posts')
+        Meta::setTitle('Posts')
             ->setDescription('Blog posts')
             ->setCanonical(url()->current());
 
@@ -33,8 +24,7 @@ class PostController extends Controller
 
     public function show(Post $post):View
     {
-        $this->meta
-            ->setTitle($post->meta_title ?? $post->name)
+        Meta::setTitle($post->meta_title ?? $post->name)
             ->setDescription($post->meta_description ?? $post->name)
             ->setCanonical(url()->current());
 

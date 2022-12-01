@@ -4,24 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Tag;
-use Butschster\Head\Contracts\MetaTags\MetaInterface;
-use Illuminate\Http\Request;
+use Butschster\Head\Facades\Meta;
 use Illuminate\View\View;
 
 class TagController extends Controller
 {
 
-    protected $meta;
-
-    public function __construct(MetaInterface $meta)
-    {
-        $this->meta = $meta;
-    }
-
     public function index():View
     {
-        $this->meta
-            ->setTitle('Tags')
+       Meta::setTitle('Tags')
             ->setDescription('Blog tags')
             ->setCanonical(url()->current());
 
@@ -31,8 +22,7 @@ class TagController extends Controller
 
     public function show(Tag $tag):View
     {
-        $this->meta
-            ->setTitle($tag->name)
+        Meta::setTitle($tag->name)
             ->setDescription($tag->name)
             ->setCanonical(url()->current());
 
