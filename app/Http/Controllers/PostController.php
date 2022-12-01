@@ -15,7 +15,6 @@ class PostController extends Controller
             ->setCanonical(url()->current());
 
         $posts = Post::query()
-            ->with('media', 'category')
             ->paginate(10)
             ->withQueryString();
 

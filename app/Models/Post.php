@@ -16,6 +16,12 @@ class Post extends Model implements HasMedia
 {
     use SoftDeletes, HasSlug, InteractsWithMedia, HasFactory;
 
+    protected $guarded = ['id'];
+
+    protected $dates = ['deleted_at'];
+
+    protected $with = ['tags', 'category', 'media'];
+
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()
@@ -23,10 +29,6 @@ class Post extends Model implements HasMedia
             ->saveSlugsTo('slug')
             ->preventOverwrite();
     }
-
-    protected $guarded = ['id'];
-
-    protected $dates = ['deleted_at'];
 
     public function category():BelongsTo
     {
