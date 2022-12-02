@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Abordage\LastModified\Facades\LastModified;
 use App\Models\Post;
 use App\Models\Tag;
 use Butschster\Head\Facades\Meta;
@@ -29,6 +30,8 @@ class TagController extends Controller
         $posts = Post::whereHas('tags', function ($q) use($tag){
             $q->where('id', $tag->id);
         })->paginate(10)->withQueryString();
+
+        LastModified::set($tag->updated_at);
 
         return view('tags.show', compact('tag', 'posts'));
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Abordage\LastModified\Facades\LastModified;
 use App\Models\Category;
 use Butschster\Head\Facades\Meta;
 use Illuminate\View\View;
@@ -25,6 +26,8 @@ class CategoryController extends Controller
         Meta::setTitle($category->meta_title ?? $category->name)
             ->setDescription($category->meta_description ?? $category->name)
             ->setCanonical(url()->current());
+
+        LastModified::set($category->updated_at);
 
         $posts = $category->posts()->paginate(10)->withQueryString();
 

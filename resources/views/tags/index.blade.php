@@ -1,5 +1,6 @@
 <x-app-layout>
     <x-container>
+        {{ Breadcrumbs::render('tags') }}
         <div class="flex space-x-2 space-y-2 flex-row">
             @each('tags.item', $tags, 'tag', 'tags.no-items')
         </div>

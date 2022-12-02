@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Abordage\LastModified\Facades\LastModified;
 use App\Models\Post;
 use Butschster\Head\Facades\Meta;
 use Illuminate\View\View;
@@ -26,6 +27,8 @@ class PostController extends Controller
         Meta::setTitle($post->meta_title ?? $post->name)
             ->setDescription($post->meta_description ?? $post->name)
             ->setCanonical(url()->current());
+
+        LastModified::set($post->updated_at);
 
         return view('posts.show', compact('post'));
     }

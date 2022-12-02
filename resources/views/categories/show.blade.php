@@ -1,5 +1,6 @@
 <x-app-layout>
     <x-container>
+        {{ Breadcrumbs::render('category', $category) }}
         <x-h1>
             {{$category->name}}
         </x-h1>

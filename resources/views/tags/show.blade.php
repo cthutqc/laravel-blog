@@ -1,5 +1,6 @@
 <x-app-layout>
     <x-container>
+        {{ Breadcrumbs::render('tag', $tag) }}
         <x-h1>
             {{$tag->name}}
         </x-h1>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Abordage\LastModified\Facades\LastModified;
 use App\Models\Page;
 use Butschster\Head\Facades\Meta;
 use Illuminate\Http\Request;
@@ -20,6 +21,8 @@ class PageController extends Controller
         Meta::setTitle($page->meta_title ?? $page->name)
             ->setDescription($page->meta_description ?? $page->name)
             ->setCanonical(url()->current());
+
+        LastModified::set($page->updated_at);
 
         return view('pages.show', compact('page'));
     }

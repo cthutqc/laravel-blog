@@ -1,5 +1,6 @@
 <x-app-layout>
     <x-container>
+        {{ Breadcrumbs::render('post', $post) }}
         <x-h1>
             {{$post->name}}
         </x-h1>
