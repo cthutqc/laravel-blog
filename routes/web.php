@@ -38,3 +38,5 @@ Route::get('tags', [\App\Http\Controllers\TagController::class, 'index'])
     ->name('tags.index');
 Route::get('tags/{tag:slug}', [\App\Http\Controllers\TagController::class, 'show'])
     ->name('tags.show');
+Route::get('/{page:slug}', \App\Http\Controllers\PageController::class)
+    ->name('pages.show');
