@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Cthutqc\ViewCount\ViewCountable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -11,7 +12,7 @@ use Spatie\Sluggable\SlugOptions;
 
 class Tag extends Model
 {
-    use SoftDeletes, HasSlug, HasFactory;
+    use SoftDeletes, HasSlug, HasFactory, ViewCountable;
 
     public function getSlugOptions() : SlugOptions
     {

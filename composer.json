@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "abordage/laravel-last-modified": "^0.1.4",
         "butschster/meta-tags": "^2.2",
+        "cthutqc/view-count": "^1.0",
         "diglactic/laravel-breadcrumbs": "^8.0",
         "filament/filament": "^2.16",
         "filament/spatie-laravel-media-library-plugin": "^2.16",

@@ -33,6 +33,8 @@ class TagController extends Controller
 
         LastModified::set($tag->updated_at);
 
+        $tag->viewCount();
+
         return view('tags.show', compact('tag', 'posts'));
     }
 }

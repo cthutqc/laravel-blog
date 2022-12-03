@@ -30,6 +30,8 @@ class PostController extends Controller
 
         LastModified::set($post->updated_at);
 
+        $post->viewCount();
+
         return view('posts.show', compact('post'));
     }
 }

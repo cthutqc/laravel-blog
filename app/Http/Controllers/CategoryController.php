@@ -29,6 +29,8 @@ class CategoryController extends Controller
 
         LastModified::set($category->updated_at);
 
+        $category->viewCount();
+
         $posts = $category->posts()->paginate(10)->withQueryString();
 
         return view('categories.show', compact('category', 'posts'));

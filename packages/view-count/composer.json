@@ -1,0 +1,27 @@
+{
+    "name": "cthutqc/view-count",
+    "description": "View counter for laravel models",
+    "minimum-stability": "stable",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey",
+            "email": "toserg81@mail.ru"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Cthutqc\\ViewCount\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cthutqc\\ViewCount\\ViewCountServiceProvider"
+            ]
+        }
+    }
+}

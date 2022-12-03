@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Cthutqc\ViewCount\ViewCountable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,7 +15,7 @@ use Spatie\Sluggable\SlugOptions;
 
 class Post extends Model implements HasMedia
 {
-    use SoftDeletes, HasSlug, InteractsWithMedia, HasFactory;
+    use SoftDeletes, HasSlug, InteractsWithMedia, HasFactory, ViewCountable;
 
     protected $guarded = ['id'];
 
