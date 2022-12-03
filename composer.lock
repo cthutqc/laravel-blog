@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1909724d6d537a357b533989a6401c7d",
+    "content-hash": "7bbd7e7b5e2642dfcb87db2d0fd08ae7",
     "packages": [
         {
             "name": "abordage/laravel-last-modified",
@@ -427,19 +427,32 @@
         },
         {
             "name": "cthutqc/view-count",
-            "version": "v1.0.0",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cthutqc/view-count.git",
-                "reference": "7f25ea674f67d74819e18280acf37607bc48e622"
+                "reference": "d8bcab5931deb7d10109116c1f468f89c15dde9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cthutqc/view-count/zipball/7f25ea674f67d74819e18280acf37607bc48e622",
-                "reference": "7f25ea674f67d74819e18280acf37607bc48e622",
+                "url": "https://api.github.com/repos/cthutqc/view-count/zipball/d8bcab5931deb7d10109116c1f468f89c15dde9c",
+                "reference": "d8bcab5931deb7d10109116c1f468f89c15dde9c",
                 "shasum": ""
             },
+            "default-branch": true,
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Cthutqc\\ViewCount\\ViewCountServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cthutqc\\ViewCount\\": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -453,9 +466,9 @@
             "description": "View counter for laravel models",
             "support": {
                 "issues": "https://github.com/cthutqc/view-count/issues",
-                "source": "https://github.com/cthutqc/view-count/tree/v1.0.0"
+                "source": "https://github.com/cthutqc/view-count/tree/main"
             },
-            "time": "2022-12-03T15:29:18+00:00"
+            "time": "2022-12-03T15:56:27+00:00"
         },
         {
             "name": "danharrin/date-format-converter",
@@ -2491,16 +2504,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.10.4",
+            "version": "3.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "a7790f3dd1b27af81d380e6b2afa77c16ab7e181"
+                "reference": "7e423e5dd240a60adfab9bde058d7668863b7731"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a7790f3dd1b27af81d380e6b2afa77c16ab7e181",
-                "reference": "a7790f3dd1b27af81d380e6b2afa77c16ab7e181",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7e423e5dd240a60adfab9bde058d7668863b7731",
+                "reference": "7e423e5dd240a60adfab9bde058d7668863b7731",
                 "shasum": ""
             },
             "require": {
@@ -2562,7 +2575,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.10.4"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.11.0"
             },
             "funding": [
                 {
@@ -2578,7 +2591,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-26T19:48:01+00:00"
+            "time": "2022-12-02T14:39:57+00:00"
         },
         {
             "name": "league/glide",
@@ -10259,7 +10272,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "cthutqc/view-count": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

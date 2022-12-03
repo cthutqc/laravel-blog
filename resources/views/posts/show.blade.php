@@ -4,6 +4,7 @@
         <x-h1>
             {{$post->name}}
         </x-h1>
+        <p>Viewed {{$post->showViewCount()}} times</p>
         <p class="text-slate-400 text-sm text-bold">Published in <a href="{{route('categories.show', $post->category)}}">{{$post->category->name}}</a></p>
         <p class="text-slate-400 text-xs">{{$post->created_at}}</p>
         <x-card>
